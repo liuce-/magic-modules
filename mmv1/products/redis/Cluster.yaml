@@ -29,6 +29,9 @@ create_url: 'projects/{{project}}/locations/{{region}}/clusters?clusterId={{name
 update_verb: :PATCH
 update_mask: true
 autogen_async: true
+custom_code: !ruby/object:Provider::Terraform::CustomCode
+  decoder: templates/terraform/decoders/redis_cluster.go.erb
+  extra_schema_entry: templates/terraform/extra_schema_entry/redis_cluster.erb
 parameters:
   - !ruby/object:Api::Type::String
     name: name

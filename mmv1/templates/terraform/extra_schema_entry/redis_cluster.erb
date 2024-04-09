@@ -1,0 +1,25 @@
+"certificate_authority": {
+    Type: schema.TypeList,
+    MaxItems:    1,
+    Elem: &schema.Resource{
+        Schema: map[string]*schema.Schema{
+            "name": {
+                Type: schema.TypeString,
+            },
+            "managed_server_ca":{
+                Type: schema.TypeList,
+                MaxItems:    1,
+                Elem: &schema.Resource{
+                    Schema: map[string]*schema.Schema{
+                        "ca_certs": {
+                            Type: schema.TypeList,
+                            Elem: &schema.Schema{
+                                Type: schema.TypeString,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+},
